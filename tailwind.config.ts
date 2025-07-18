@@ -52,16 +52,28 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				'feng-shui': {
+					red: 'hsl(var(--feng-shui-red))',
+					gold: 'hsl(var(--feng-shui-gold))',
+					'deep-red': 'hsl(var(--feng-shui-deep-red))',
+					'light-gold': 'hsl(var(--feng-shui-light-gold))',
+					crimson: 'hsl(var(--feng-shui-crimson))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-subtle': 'var(--gradient-subtle)'
+			},
+			boxShadow: {
+				'elegant': 'var(--shadow-elegant)',
+				'glow': 'var(--shadow-glow)',
+				'gold': 'var(--shadow-gold)'
+			},
+			animation: {
+				'floating': 'floating 3s ease-in-out infinite',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
