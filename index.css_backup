@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FengShui Calculator Design System - Red & Gold Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Rich red primary inspired by traditional Chinese red */
+    --primary: 0 73% 41%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Warm gold secondary */
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent gold with higher saturation */
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 0 73% 41%;
+
+    --radius: 0.75rem;
+
+    /* FengShui specific colors */
+    --feng-shui-red: 0 73% 41%;
+    --feng-shui-gold: 45 93% 47%;
+    --feng-shui-deep-red: 0 73% 35%;
+    --feng-shui-light-gold: 48 96% 89%;
+    --feng-shui-crimson: 348 83% 47%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--feng-shui-red)), hsl(var(--feng-shui-crimson)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--feng-shui-gold)), hsl(43 96% 56%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--feng-shui-red)) 0%, hsl(var(--feng-shui-crimson)) 50%, hsl(var(--feng-shui-gold)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--feng-shui-light-gold)) 0%, hsl(0 0% 98%) 100%);
+
+    /* Shadows with red glow */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--feng-shui-red) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--feng-shui-red) / 0.2);
+    --shadow-gold: 0 4px 20px hsl(var(--feng-shui-gold) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 73% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 45 93% 55%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 43 96% 60%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 73% 50%;
+
+    /* Dark mode FengShui colors */
+    --feng-shui-red: 0 73% 50%;
+    --feng-shui-gold: 45 93% 55%;
+    --feng-shui-deep-red: 0 73% 45%;
+    --feng-shui-light-gold: 48 96% 15%;
+    --feng-shui-crimson: 348 83% 55%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--feng-shui-red)), hsl(var(--feng-shui-crimson)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--feng-shui-gold)), hsl(43 96% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--feng-shui-red)) 0%, hsl(var(--feng-shui-crimson)) 50%, hsl(var(--feng-shui-gold)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 7%) 0%, hsl(0 0% 5%) 100%);
+
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--feng-shui-red) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--feng-shui-red) / 0.3);
+    --shadow-gold: 0 4px 20px hsl(var(--feng-shui-gold) / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Feng Shui inspired animations */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow-pulse {
+    from {
+      filter: drop-shadow(0 0 5px hsl(var(--feng-shui-gold) / 0.4));
+    }
+    to {
+      filter: drop-shadow(0 0 20px hsl(var(--feng-shui-gold) / 0.8)) drop-shadow(0 0 30px hsl(var(--feng-shui-red) / 0.4));
+    }
+  }
+}
