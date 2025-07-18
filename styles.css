@@ -613,4 +613,21 @@ body {
     .navigation {
         background: hsla(0, 0%, 5%, 0.8);
     }
+
+/* Full-page background image layer */
+.full-page-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url('./assets/your-background.jpg'); /* Change this if the path/image name is different */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Adjust for more or less visibility */
+    pointer-events: none;
+}
+
 }
