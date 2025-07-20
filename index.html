@@ -61,19 +61,45 @@
                 Calculate your personal feng shui elements, find harmony in your space, and unlock the secrets of ancient Chinese wisdom
             </p>
 
-            <!--
-            <div class="hero-form">
-                <input type="text" placeholder="Enter your birth date to start..." class="hero-input">
-                <button class="btn btn-secondary">Calculate Now</button>
+          {/* Input section */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-md mx-auto">
+            <div className="flex-1 w-full">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "w-full justify-start text-left font-normal h-12 border-2",
+                      !date && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {date ? format(date, "PPP") : "Enter your birthdate to start"}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    disabled={(date) =>
+                      date > new Date() || date < new Date("1900-01-01")
+                    }
+                    initialFocus
+                    className="p-3 pointer-events-auto"
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
-            -->
-            <div class="hero-form">
-                <div class="input-wrapper">
-                    <input type="date" id="birthdate" class="hero-input" required>
-                    <label for="birthdate" class="floating-placeholder">Enter your birth date to start</label>
-                </div>
-                <button class="btn btn-secondary">Calculate Now</button>
-            </div>
+            
+            <Button
+              onClick={handleCalculate}
+              disabled={!date}
+              className="bg-gradient-to-r from-gold to-red hover:from-gold-dark hover:to-red-dark text-white font-semibold px-8 h-12 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+            >
+              Calculate Now
+            </Button>
+          </div>
 
             <div class="hero-features">
                 <!-- First row of features -->
