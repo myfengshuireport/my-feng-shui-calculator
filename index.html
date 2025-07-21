@@ -11,6 +11,8 @@
     <meta property="og:description" content="Calculate your personal feng shui elements and transform your life with ancient Chinese wisdom.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/hero-image.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!--added #42-->
+
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -67,13 +69,14 @@
                 <button class="btn btn-secondary">Calculate Now</button>
             </div>
             -->
+            <!-- Modified Date Picker #42 -->
             <div class="hero-form">
                 <div class="input-wrapper">
-                    <input type="date" id="birthdate" class="hero-input" required>
-                    <label for="birthdate" class="floating-placeholder">Enter your birth date to start</label>
+                    <input type="text" id="birthdate" class="hero-input" placeholder="Enter your birth date to start" required>
                 </div>
                 <button class="btn btn-secondary">Calculate Now</button>
             </div>
+
 
             <div class="hero-features">
                 <!-- First row of features -->
@@ -240,5 +243,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    flatpickr("#birthdate", {
+        dateFormat: "Y-m-d",
+        altInput: true,
+        altFormat: "F j, Y",
+        allowInput: true,
+        yearSelectorType: 'dropdown',
+        maxDate: "today"
+    });
+</script>
 </body>
 </html>
